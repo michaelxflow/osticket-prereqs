@@ -37,7 +37,7 @@ Name your recource group "osticket-lab", select your "region" then precede to "c
 Next we can then create our virtual machine for this lab!
 <p>
 <p>
-Under recource group for this VM, select "osticket-lab". Name the virtua Machine "osticket-vm" and make sure the region is the same as your recource group zone!
+Under recource group for this VM, select "osticket-lab". Name the virtual Machine "osticket-vm" and make sure the region is the same as your recource group zone!
 </p>
 <br />
 
@@ -69,7 +69,8 @@ Paste the Public IP Address, yours will be different than mine! Then login using
 <p>
 </p>
 <br />
-Within the VM (osticket-vm), download the osTicket-Installation-Files.zip from the osTicket website and unzip it onto your desktop. The folder should be called “osTicket-Installation-Files”
+Within the VM (osticket-vm) ,download the osTicket-Installation-Files.zip from the osTicket website and unzip it onto your desktop. The folder should be called “osTicket-Installation-Files”
+<p>
 We will use the files in this folder to install osTicket and some of the dependencies.
 <p>
 </p>
@@ -77,7 +78,8 @@ We will use the files in this folder to install osTicket and some of the depende
 <p>
 </p>
 <br />
-Go into your contol panel of windows and Install / Enable IIS in Windows WITH CGI
+Go into your contol panel of windows and Install / Enable IIS in Windows with CGI
+
 World Wide Web Services -> Application Development Features -> [X] CGI
 </p>
 <img src="https://github.com/user-attachments/assets/39c47c93-e149-42d5-bd6b-c5f0e0ded3f1" height="80%" width="80%" alt="Disk Sanitization Steps"/>
@@ -105,12 +107,18 @@ From the “osTicket-Installation-Files” folder, unzip PHP 7.3.8 (php-7.3.8-nt
 From the “osTicket-Installation-Files” folder, install VC_redist.x86.exe.
 <p>
 </p>
-From the “osTicket-Installation-Files” folder, install MySQL 5.5.62 (mysql-5.5.62-win32.msi)
-Typical Setup ->
-Launch Configuration Wizard (after install) ->
+From the “osTicket-Installation-Files” folder
+<p>
+Install MySQL 5.5.62 (mysql-5.5.62-win32.msi)
+<p>
+Typical Setup -> Launch Configuration Wizard (after install)
+<p>
 Standard Configuration ->
+<p>
 Username: root
+
 Password: root
+<p>
 Then hit next and execute, then Finish! This is now your Database.
 <p>
 </p>
@@ -135,7 +143,9 @@ Reload IIS (Open IIS, Stop and Start the server)
 </p>
 <br />
 Install osTicket v1.15.8
+<p>
 From the “osTicket-Installation-Files” folder, unzip “osTicket-v1.15.8.zip” and copy the “upload” folder into “c:\inetpub\wwwroot”
+<p>
 Within “c:\inetpub\wwwroot”, Rename “upload” to “osTicket”
 <p>
 </p>
@@ -146,6 +156,7 @@ Within “c:\inetpub\wwwroot”, Rename “upload” to “osTicket”
 Reload IIS (Open IIS, Stop and Start the server)
 <p>
 Go to sites -> Default -> osTicket
+<p>
 On the right, click “Browse *:80”
 <P>
 </P>
@@ -162,7 +173,10 @@ Then browse to "osTicket" on the vm windows
 Note that some extensions are not enabled as you see above!
 <p>
 </p>
-Go back to IIS, sites -> Default -> osTicket
+Go back to IIS
+
+sites -> Default -> osTicket
+
 Double-click PHP Manager
 <p>
 </p>
@@ -170,8 +184,11 @@ Double-click PHP Manager
 <p>
 </p>
 Click “Enable or disable an extension”
+
 Enable: php_imap.dll
+
 Enable: php_intl.dll
+
 Enable: php_opcache.dll
 <p>
 </p>
@@ -179,7 +196,7 @@ Enable: php_opcache.dll
 <p>
 </p>
 <br />
-Refresh the osTicket site in your browser, observe the changes
+Refresh the osTicket site in your browser and observe the changes
 <p>
 </p>
 Rename: ost-config.php
@@ -191,7 +208,9 @@ From: C:\inetpub\wwwroot\osTicket\include\ost-sampleconfig.php   To: C:\inetpub\
 <p>
 </p>
 <br />
-Assign Permissions: ost-config.php  Disable inheritance -> Remove All, then New Permissions -> Everyone -> All
+Assign Permissions: ost-config.php 
+<p>
+Disable inheritance -> Remove All, then New Permissions -> Everyone -> All
 <p>
 </p>
 <img src="https://github.com/user-attachments/assets/a93340bd-4888-4dc6-b59a-90a2d7e4555e" height="80%" width="80%" alt="Disk Sanitization Steps"/>
@@ -216,7 +235,7 @@ Open Heidi SQL, Create a new session, root/root then Connect to the session
 <p>
 Create a database called “osTicket”
 <p>
-right click the unamed folder, click "create new" then Datatbase, Mkae the Database "osticket"
+Right click the unamed folder, click "create new" then Datatbase, Make the Database "osticket"
 <p>
 </p>
 <img src="https://github.com/user-attachments/assets/633f0d93-9eec-40f1-9bbe-237971f47c0c" height="80%" width="80%" alt="Disk Sanitization Steps"/>
@@ -242,9 +261,6 @@ Browse to your help desk login page: http://localhost/osTicket/scp/login.php
 </p>
 <br />
 Congradulations! You have installed OsTicket on Your Virtual Machine! Now lets create some tickets and solve them!
-
-
-
 
 
 
